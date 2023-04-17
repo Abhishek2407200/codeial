@@ -3,7 +3,14 @@ const express =require('express');
 const app = express();
 
 const port = 8000;
+const expressLayouts =require('express-ejs-layouts');
 
+app.use(expressLayouts);
+// extract styles and scripts from sub pages into layouts
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+
+app.use(express.static('./assests'));
 // use express routes
 app.use('/', require('./routes'));
 
@@ -20,3 +27,4 @@ app.listen(port,function(err){
 
     console.log(`Server is running on port : ${port}`);
 });
+
