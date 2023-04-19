@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 
-mongoose.connect('mongodb://localhost/codeial_devlopment',
+mongoose.connect('mongodb://localhost:27017/codeial_devlopment',
 {     useNewUrlParser: true,      useUnifiedTopology: true,     family: 4, });
 
 const db = mongoose.connection;
