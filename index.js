@@ -24,6 +24,8 @@ app.use(cookieParser());
 
 
 app.use(express.static('./assests'));
+// make the uploads paths available to the broweser 
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
 app.use(expressLayouts);
 // extract styles and scripts from sub pages into layouts
