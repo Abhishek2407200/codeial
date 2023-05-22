@@ -1,5 +1,6 @@
 const Post = require('../models/post');
 const User = require('../models/user');
+const { post } = require('../routes/api/v1');
 
 
 module.exports.home = async function(req,res){
@@ -14,6 +15,8 @@ module.exports.home = async function(req,res){
             path:'user'
         }
     });
+
+    // console.log(posts);
    
     let  users = await User.find({});
     return res.render('home',{

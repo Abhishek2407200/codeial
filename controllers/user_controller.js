@@ -93,7 +93,7 @@ module.exports.create =function(req,res){
 
         if(!user){
             User.create(req.body, function(err,user){
-                if(err){console.log('error in creating user while  signing up');return}
+                if(err){req.flash('error', err); return}
                 return res.redirect('/user/sign-in');
             })
         }else{
